@@ -19,6 +19,8 @@ const start = async () => {
   }
 
   app.use('/graphql', bodyParser.json(), graphqlExpress(buildOptions));
+
+  //Makeshift authorization as example
   app.use('/graphiql', graphiqlExpress({
     endpointURL: '/graphql',
     passHeader: `'Authorization': 'bearer token-mickey@test123.com'`
